@@ -31,9 +31,11 @@ const themeSwitchInputEl = document.querySelector('#theme-switch-toggle');
 
 themeSwitchInputEl.addEventListener('change', onChangeTheme);
 
+document.body.classList.toggle(Theme.LIGHT);
 
 function onChangeTheme(event) {
   document.body.classList.toggle(Theme.DARK);
+  document.body.classList.toggle(Theme.LIGHT);
 
   if (event.currentTarget.checked) {
     localStorage.setItem('theme', Theme.DARK);
